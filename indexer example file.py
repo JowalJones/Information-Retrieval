@@ -12,13 +12,16 @@
 ##
 #  We can further develop this example by keeping a reference for each term of the documents that it came from and by 
 #  developing a list of the documents thus creating the term and document dictionaries. 
-
+#
 
 
 import sys,os,re
+import math
 import time
 
 # define global variables used as counters
+
+scriptpath = "./porterstemmer.py"
 tokens = 0
 documents = 0
 terms = 0
@@ -106,6 +109,12 @@ print ('Processing Start Time: %.2d:%.2d' % (t2.tm_hour, t2.tm_min))
 print ("Documents %i" % documents)
 print ("Tokens %i" % tokens)
 print ("Terms %i" % terms)
+
+
+print("Number of documents processed %i" % documents)
+print("Total number of terms parsed from all documents %i" % terms)
+print("Total number of unique terms found and added to the index %i" % tokens)
+t2 = time.localtime()
 
 t2 = time.localtime()   
 print ('Processing End Time: %.2d:%.2d' % (t2.tm_hour, t2.tm_min))
